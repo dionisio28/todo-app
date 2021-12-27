@@ -3,16 +3,16 @@ import { Box, FlatList } from "native-base";
 import { BottomButton, CardItem, Header } from "../components";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../@types";
-import { useSelector } from "react-redux";
-import { RootState } from "../store";
+import { useDispatch, useSelector } from "react-redux";
+import { selectTasks, addTask } from "../store/task-slice";
 
 interface MainProps {
   navigation: NativeStackNavigationProp<RootStackParamList, "Main">;
 }
 
 export default function Main({ navigation }: MainProps) {
+  const taskList = useSelector(selectTasks);
 
-  const taskList = useSelector((state: RootState) => state.taskList);
   const renderItem = useCallback(({ index, item }) => {
     return <CardItem item={item} />;
   }, []);
@@ -23,7 +23,7 @@ export default function Main({ navigation }: MainProps) {
   return (
     <Box flex={1} px={"6"} bg={"bg"} py={8}>
       <FlatList
-        data={taskList.tasks}
+        data={taskList}
         ListHeaderComponent={<Header />}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
