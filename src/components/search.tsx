@@ -4,12 +4,12 @@ import { Feather } from "@expo/vector-icons";
 export default function Search() {
   return (
     <IconButton
-      icon={<Icon as={Feather} name="search" color={'white'}/>}
+      icon={<Icon as={Feather} name="search" color={"white"} />}
       borderRadius="full"
-      alignItems={'center'}
-      alignSelf={'center'}
-      justifyContent={'center'}
-      bg={'black'}
+      alignItems={"center"}
+      alignSelf={"center"}
+      justifyContent={"center"}
+      bg={"black"}
       _icon={{
         size: 25,
       }}
