@@ -4,6 +4,17 @@
     "slug": "todo-app",
     "version": "1.0.0",
     "orientation": "portrait",
+    "plugins": [
+      ["expo-community-flipper", {
+        "ios": {
+          "Flipper-Folly": "2.6.10",
+          "Flipper-RSocket": "1.4.3",
+          "Flipper-DoubleConversion": "3.1.7",
+          "Flipper-Glog": "0.3.9",
+          "Flipper-PeerTalk": "0.0.4"
+        }
+      }]
+    ],
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",

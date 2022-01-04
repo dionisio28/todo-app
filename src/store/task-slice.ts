@@ -1,26 +1,26 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { RootState } from '.'
-import {TaskItemProps} from '../@types'
+import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from ".";
+import { TaskItemProps } from "../@types";
 
 export type TaskListState = {
-    tasks: TaskItemProps[];
-}
+  tasks: TaskItemProps[];
+};
 
 const initialState: TaskListState = {
-    tasks: [],
-}
+  tasks: [],
+};
 
 const taskListSlice = createSlice({
-    name: 'taskList',
-    initialState: initialState,
-    reducers: {
-        addTask: (state, action) => {
-            state.tasks = [...state.tasks, action.payload]
-          },
-    }
-})
+  name: "taskList",
+  initialState: initialState,
+  reducers: {
+    addTask: (state, action) => {
+      state.tasks = [...state.tasks, action.payload];
+    },
+  },
+});
 
-export const selectTasks = (state : RootState) => state.taskList.tasks;
+export const selectTasks = (state: RootState) => state.taskList.tasks;
 
 export const { addTask } = taskListSlice.actions;
 

@@ -9,11 +9,13 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function Routes() {
   return (
-    <Stack.Navigator initialRouteName={"Main"}>
+    <Stack.Navigator
+    screenOptions={{
+      headerShown: false
+    }}
+    initialRouteName={"Main"}>
       <Stack.Screen
-        options={{
-          headerShown: false,
-        }}
+       
         name={"Main"}
         component={Main}
       />

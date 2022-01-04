@@ -31,10 +31,10 @@ export default function CardItem({ item }: CardItemProps) {
   const date: dateType = useMemo(() => {
     let year = item.creationDate.getFullYear();
     let month = item.creationDate.getMonth();
-    let day = item.creationDate.getDay().toString();
+    let day = item.creationDate.getDate().toString();
     var hour = item.creationDate.getHours().toString();
     var min = item.creationDate.getMinutes().toString();
-
+    
     if (day.length < 2) {
       day = "0" + day;
     }

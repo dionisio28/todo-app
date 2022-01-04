@@ -20,7 +20,7 @@ export default function BottomButton(props: ButtonProps) {
       <Button
         alignSelf={"center"}
         onPress={props.onPress}
-        padding={2.5}
+        padding={4}
         bg={props.bg ?? "black"}
         borderRadius={props.borderRadius ?? 8}
         w={props.w}

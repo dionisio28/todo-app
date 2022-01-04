@@ -1,16 +1,14 @@
 import React, { useCallback } from "react";
 import { Box, FlatList } from "native-base";
-import { BottomButton, CardItem, Header } from "../components";
+import { BottomButton, CardItem, HeaderMain} from "../components";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../@types";
 import { useDispatch, useSelector } from "react-redux";
 import { selectTasks, addTask } from "../store/task-slice";
+import { IScreen } from "../@types/screen-props";
 
-interface MainProps {
-  navigation: NativeStackNavigationProp<RootStackParamList, "Main">;
-}
 
-export default function Main({ navigation }: MainProps) {
+export default function Main({ navigation }: IScreen) {
   const taskList = useSelector(selectTasks);
 
   const renderItem = useCallback(({ index, item }) => {
@@ -24,7 +22,7 @@ export default function Main({ navigation }: MainProps) {
     <Box flex={1} px={"6"} bg={"bg"} py={8}>
       <FlatList
         data={taskList}
-        ListHeaderComponent={<Header />}
+        ListHeaderComponent={<HeaderMain />}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
