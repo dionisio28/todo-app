@@ -32,8 +32,10 @@ export default function Header({
     <>
       <HStack
         space={4}
+        w={'100%'}
         pt={Platform.OS === "ios" ? 15 : 4}
         pb={8}
+        
         alignItems="center"
         justifyContent={"space-between"}
       >

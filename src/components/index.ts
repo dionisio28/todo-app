@@ -4,3 +4,4 @@ export { default as Search } from "./search";
 export { default as BottomButton } from "./bottom-button";
 export { default as CardItem } from "./card-item";
 export { default as Header } from "./header";
+export { default as InputText} from './input-text';
